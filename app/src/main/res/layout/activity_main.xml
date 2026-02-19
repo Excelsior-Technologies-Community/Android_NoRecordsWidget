@@ -12,6 +12,16 @@
     <com.ext.norecordswidget.NoRecordsView
         android:id="@+id/noRecordsView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+
+        app:titleText="No Orders Found"
+        app:subtitleText="Please place your first order"
+
+        app:iconSrc="@drawable/ic_launcher_foreground"
+
+        app:showRetryButton="true"
+        app:retryButtonText="Try Again"
+        app:retryButtonBgColor="#FF9800"/>
+
 
 </LinearLayout>

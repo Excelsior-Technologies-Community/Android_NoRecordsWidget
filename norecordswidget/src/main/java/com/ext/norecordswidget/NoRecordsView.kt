@@ -1,6 +1,7 @@
 package com.ext.norecordswidget
 
 import android.content.Context
+import android.graphics.Color
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.Button
@@ -26,7 +27,59 @@ class NoRecordsView @JvmOverloads constructor(
         title = findViewById(R.id.noRecordsTitle)
         subtitle = findViewById(R.id.noRecordsSubtitle)
         retryButton = findViewById(R.id.retryButton)
+
+        // Load Custom Attributes
+        attrs?.let {
+            val typedArray = context.obtainStyledAttributes(
+                it,
+                R.styleable.NoRecordsView
+            )
+
+            // Title Text
+            val titleText = typedArray.getString(R.styleable.NoRecordsView_titleText)
+            titleText?.let { text ->
+                title.text = text
+            }
+
+            // Subtitle Text
+            val subtitleText =
+                typedArray.getString(R.styleable.NoRecordsView_subtitleText)
+            subtitleText?.let { text ->
+                subtitle.text = text
+            }
+
+            // Icon Source
+            val iconRes =
+                typedArray.getResourceId(R.styleable.NoRecordsView_iconSrc, -1)
+            if (iconRes != -1) {
+                icon.setImageResource(iconRes)
+            }
+
+            // Show Retry Button
+            val showRetry =
+                typedArray.getBoolean(R.styleable.NoRecordsView_showRetryButton, false)
+            retryButton.visibility = if (showRetry) VISIBLE else GONE
+
+            // Retry Button Text
+            val retryText =
+                typedArray.getString(R.styleable.NoRecordsView_retryButtonText)
+            retryText?.let { text ->
+                retryButton.text = text
+            }
+
+            // Retry Button Background Color
+            val retryBgColor =
+                typedArray.getColor(
+                    R.styleable.NoRecordsView_retryButtonBgColor,
+                    Color.GRAY
+                )
+            retryButton.setBackgroundColor(retryBgColor)
+
+            typedArray.recycle()
+        }
     }
+
+    // Public Functions
 
     fun setTitle(text: String) {
         title.text = text

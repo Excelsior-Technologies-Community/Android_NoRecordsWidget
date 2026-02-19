@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="NoRecordsView">
+
+        <!-- Title Text -->
+        <attr name="titleText" format="string"/>
+
+        <!-- Subtitle Text -->
+        <attr name="subtitleText" format="string"/>
+
+        <!-- Icon -->
+        <attr name="iconSrc" format="reference"/>
+
+        <!-- Retry Button -->
+        <attr name="showRetryButton" format="boolean"/>
+
+        <!-- Retry Button Text -->
+        <attr name="retryButtonText" format="string"/>
+
+        <!-- Retry Button Background Color -->
+        <attr name="retryButtonBgColor" format="color"/>
+
+    </declare-styleable>
+
+</resources>

@@ -19,13 +19,10 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         val noView = findViewById<NoRecordsView>(R.id.noRecordsView)
-        noView.setTitle("No Orders Found")
-        noView.setSubtitle("You have not placed any orders yet.")
-        noView.showRetryButton(true)
 
-        // Retry click
         noView.setOnRetryClick {
-            Toast.makeText(this, "Retry Clicked!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Retry clicked!", Toast.LENGTH_SHORT).show()
         }
+
     }
 }
