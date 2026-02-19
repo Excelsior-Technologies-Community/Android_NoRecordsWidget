@@ -23,6 +23,5 @@ class MainActivity : AppCompatActivity() {
         noView.setOnRetryClick {
             Toast.makeText(this, "Retry clicked!", Toast.LENGTH_SHORT).show()
         }
-
     }
 }
